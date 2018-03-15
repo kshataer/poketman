@@ -1,5 +1,5 @@
 const $ = require('jquery');
 require('materialize-css');
-require('./alert')($);
+require('./modules/alert')($);
 
 global.$ = global.jQuery = $;
