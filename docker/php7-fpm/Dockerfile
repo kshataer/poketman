@@ -1,4 +1,3 @@
-# See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
 FROM php:7.1-fpm
 ARG TIMEZONE
 
@@ -23,7 +22,7 @@ RUN printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/con
 RUN "date"
 
 # Type docker-php-ext-install to see available extensions
-RUN docker-php-ext-install pdo
+RUN docker-php-ext-install pdo pdo_mysql
 
 # install xdebug
 RUN pecl install xdebug
