@@ -1,11 +1,15 @@
+app_poketman:
+    resource: "@AppBundle/Controller/PoketmanController.php"
+    type:     annotation
+    
 app:
     resource: '@AppBundle/Controller/Frontend'
     type: annotation
 
-admin:
-    resource: '@AppBundle/Controller/Backend'
-    type: annotation
-    prefix: /administration
+# admin:
+#     resource: '@AppBundle/Controller/Backend'
+#     type: annotation
+#     prefix: /administration
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

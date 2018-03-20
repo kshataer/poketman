@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h5>Poketman edit</h5>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <i class="mdl-color-text--blue-grey-400 material-icons">edit</i><input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            {{ form_start(delete_form) }}
+                <i class="mdl-color-text--blue-grey-400 material-icons" >delete</i><input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+         <li>
+            <a href="{{ path('poketman_index') }}"><i class="material-icons">reply</i></a>
+        </li>
+    </ul>
+{% endblock %}
