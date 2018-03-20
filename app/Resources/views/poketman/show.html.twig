@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h5>Poketman</h5>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ poketman.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ poketman.name }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ poketman.age }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ poketman.type }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ poketman.color }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('poketman_index') }}"><a href="{{ path('poketman_index') }}"><i class="material-icons">reply</i></a></a>
+        </li>
+        <li>
+            <a href="{{ path('poketman_edit', { 'id': poketman.id }) }}"><i class="mdl-color-text--blue-grey-400 material-icons">edit</i></a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <i class="mdl-color-text--blue-grey-400 material-icons" >delete</i><input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
