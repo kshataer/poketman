@@ -1,17 +1,19 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h5>Poketmen list</h5>
-        {% for poketman in poketmen %}
-            <div class="col s12 m7">
-                <div class="card horizontal">
+    <h5>Poketmen list <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons">access_alarm</i></a>
+    </h5>
+    {% for poketman in poketmen %}
+        <div class="col s12 m7">
+            <div class="card horizontal">
                 <div class="card-image">
                     <img src="{{ asset('img/pokeman1.jpg') }}">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
                         <ul>
-                            <li>Id : <a href="{{ path('poketman_show', { 'id': poketman.id }) }}">{{ poketman.id }}</a></li>
+                            <li>Id : <a href="{{ path('poketman_show', { 'id': poketman.id }) }}">{{ poketman.id }}</a>
+                            </li>
                             <li>Name : {{ poketman.name }}</li>
                             <li>Age : {{ poketman.age }}</li>
                             <li>Type : {{ poketman.type }}</li>
@@ -22,22 +24,24 @@
                     <div class="card-action">
                         <ul>
                             <li>
-                                <a class="btn-floating btn-large red" href="{{ path('poketman_show', { 'id': poketman.id }) }}">
+                                <a class="btn-floating btn-large red"
+                                   href="{{ path('poketman_show', { 'id': poketman.id }) }}">
                                     <i class="large material-icons">search</i>
                                 </a>
-                                <a class="btn-floating btn-large red" href="{{ path('poketman_edit', { 'id': poketman.id }) }}">
+                                <a class="btn-floating btn-large red"
+                                   href="{{ path('poketman_edit', { 'id': poketman.id }) }}">
                                     <i class="large material-icons">mode_edit</i>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                </div>
             </div>
-        {% endfor %}
+        </div>
+    {% endfor %}
     <ul>
         <li>
-             <a class="btn-floating btn-large green" href="{{ path('poketman_new') }}">
+            <a class="btn-floating btn-large green" href="{{ path('poketman_new') }}">
                 <i class="large material-icons">add</i>
             </a>
         </li>

@@ -1,14 +1,13 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
      <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
           <div class="mdl-layout-spacer"><a class="mdl-layout-title">Home</a></div>
           <div class="mdl-layout-spacer"><a class="mdl-layout-title" href="{{path('poketman_index')}}" >Poketman</a></div>
-          
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
@@ -20,10 +19,7 @@
           </ul>
         </div>
       </header>
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-          <span>hello@example.com</span>
-        </header>
+      <div class="demo-drawer mdl-layout__drawer  mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <nav class="mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
