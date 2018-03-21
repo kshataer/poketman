@@ -2,41 +2,43 @@
 
 {% block content %}
     <h5>Poketmen list</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Type</th>
-                <th>Color</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for poketman in poketmen %}
-            <tr>
-                <td><a href="{{ path('poketman_show', { 'id': poketman.id }) }}">{{ poketman.id }}</a></td>
-                <td>{{ poketman.name }}</td>
-                <td>{{ poketman.age }}</td>
-                <td>{{ poketman.type }}</td>
-                <td>{{ poketman.color }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('poketman_show', { 'id': poketman.id }) }}"><i class="material-icons">search</i></a>
-                            <a href="{{ path('poketman_edit', { 'id': poketman.id }) }}"><i class="material-icons">edit</i></a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                <div class="card-image">
+                    <img src="{{ asset('img/pokeman1.jpg') }}">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <ul>
+                            <li>Id : <a href="{{ path('poketman_show', { 'id': poketman.id }) }}">{{ poketman.id }}</a></li>
+                            <li>Name : {{ poketman.name }}</li>
+                            <li>Age : {{ poketman.age }}</li>
+                            <li>Type : {{ poketman.type }}</li>
+                            <li>Color : {{ poketman.color }}</li>
+                            <li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <ul>
+                            <li>
+                                <a class="btn-floating btn-large red" href="{{ path('poketman_show', { 'id': poketman.id }) }}">
+                                    <i class="large material-icons">search</i>
+                                </a>
+                                <a class="btn-floating btn-large red" href="{{ path('poketman_edit', { 'id': poketman.id }) }}">
+                                    <i class="large material-icons">mode_edit</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
     <ul>
         <li>
-            <a href="{{ path('poketman_new') }}">
-                <i class="material-icons">add circle</i>
+             <a class="btn-floating btn-large green" href="{{ path('poketman_new') }}">
+                <i class="large material-icons">add</i>
             </a>
         </li>
     </ul>

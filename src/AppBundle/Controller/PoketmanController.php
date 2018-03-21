@@ -102,19 +102,21 @@ class PoketmanController extends Controller
     /**
      * Deletes a poketman entity.
      *
-     * @Route("/{id}", name="poketman_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="poketman_delete")
+     * @Method({"GET", "POST"})
      */
     public function deleteAction(Request $request, Poketman $poketman)
     {
-        $form = $this->createDeleteForm($poketman);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($poketman);
-            $em->flush();
+    
+        $token = $request->query->get('token');
+        
+        if(!$this->isCsrfTokenValid('poketman_delete', $token)){
+            throw new \Exception('Error CSRF');
         }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($poketman);
+        $em->flush();
 
         return $this->redirectToRoute('poketman_index');
     }
